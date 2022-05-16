@@ -161,11 +161,10 @@ body {
 
 .active label:hover .switch-circle {
     background: goldenrod;
-    border: solid 0.125rem goldenrod;
-    border-color: goldenrod !important;
+    border: solid 0.2rem rgb(218, 165, 32);
+    border-color: rgb(92, 87, 87) !important;
 }
 
-/* .switch-circle:checked ~  */
 
 #switch1:checked~.navigation-and-text>.active>label:nth-child(1)>div,
 #switch2:checked~.navigation-and-text>.active>label:nth-child(2) div,
