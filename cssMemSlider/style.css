@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+}
+
+
+html {
+    height: 100vh;
+    background-color: black;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.title {
+    margin: 10vh 0 0 0;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: .8rem;
+    font-size: 5rem;
+    color: goldenrod;
+}
+
+.wrapper {
+    display: block;
+    width: 90%;
+    max-height: 32rem;
+    max-width: 56rem;
+    margin: 0 auto;
+    height: fit-content;
+    margin: 3rem auto 0 auto;
+}
+
+#slider {
+    border-radius: 0.625rem;
+    box-shadow: #25282a 1rem 1rem 9rem 3rem;
+    border: 1rem solid black;
+    overflow: hidden;
+
+}
+
+#desktop,
+#slider input {
+    display: none;
+}
+
+.wrapper-img {
+    display: flex;
+    align-items: center;
+    width: 400%;
+    transition: 1s;
+    /* height: 30vw; */
+    height: 100%;
+    max-height: 28rem;
+
+}
+
+.wrapper-img article {
+    width: 400%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    background-color: #25282a;
+
+}
+
+.wrapper-img img {
+    width: 100%;
+    max-height: 28rem;
+    max-width: 50rem;
+    object-fit: contain;
+    object-position: center;
+    /* height: 30vw; */
+}
+
+.img-description {
+    text-align: center;
+    word-wrap: break-word;
+    display: block;
+    padding: 0 5rem;
+}
+
+.navigation-and-text {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    align-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.text {
+    color: #bbb;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+
+}
+
+.wrapper-text {
+    width: 400%;
+}
+
+#description-lapenko,
+#description-bill,
+#description-boys,
+#description-cats {
+    font-size: 2rem;
+}
+
+#description-lapenko,
+#description-bill,
+#description-boys {
+    transform: rotate3d(0, 1, 0, 160deg);
+    visibility: hidden;
+}
+
+.img-description {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    text-align: start;
+    padding: 0;
+}
+
+.active {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.switch-circle {
+    border-radius: 0.625rem;
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    background: #bbb;
+    border: solid 0.125rem #25282a;
+    transition: 0.3s;
+}
+
+.active label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+
+}
+.active label:active .switch-circle {
+   transform: scale(0.6);
+}
+
+.active label:hover .switch-circle {
+    background: goldenrod;
+    border: solid 0.2rem rgb(218, 165, 32);
+    border-color: rgb(92, 87, 87) !important;
+}
+
+
+
+#switch1:checked~.navigation-and-text>.active>label:nth-child(1)>div,
+#switch2:checked~.navigation-and-text>.active>label:nth-child(2) div,
+#switch3:checked~.navigation-and-text>.active>label:nth-child(3) div,
+#switch4:checked~.navigation-and-text>.active>label:nth-child(4) div {
+    background: none;
+    border: goldenrod 0.125rem solid;
+}
+
+
+#switch1:checked~.wrapper-img {
+    margin-left: 0;
+}
+
+#switch1:checked~.navigation-and-text>.text>#description-lapenko,
+#switch1:checked~.navigation-and-text>.text>#description-bill,
+#switch1:checked~.navigation-and-text>.text>#description-boys {
+    visibility: hidden;
+    transform: translate(200%, 0) scale(0.2);
+    transition: 1s;
+}
+
+#switch1:checked~.navigation-and-text>.text>#description-cats {
+    visibility: visible;
+    transform: translate(0, 0) scale(1);
+    transition: none;
+}
+
+
+#switch2:checked~.wrapper-img {
+    margin-left: -100%;
+}
+
+#switch2:checked~.navigation-and-text>.text>#description-lapenko,
+#switch2:checked~.navigation-and-text>.text>#description-bill,
+#switch2:checked~.navigation-and-text>.text>#description-cats {
+    visibility: hidden;
+    transform: translate(200%, 0) scale(0.2);
+    transition: 1s;
+}
+
+#switch2:checked~.navigation-and-text>.text>#description-boys {
+    visibility: visible;
+    transform: translate(0, 0) scale(1);
+    transition: none;
+}
+
+
+#switch3:checked~.wrapper-img {
+    margin-left: -200%;
+}
+
+#switch3:checked~.navigation-and-text>.text>#description-lapenko,
+#switch3:checked~.navigation-and-text>.text>#description-cats,
+#switch3:checked~.navigation-and-text>.text>#description-boys {
+    visibility: hidden;
+    transform: translate(200%, 0) scale(0.2);
+    transition: 1s;
+}
+
+#switch3:checked~.navigation-and-text>.text>#description-bill {
+    visibility: visible;
+    transform: translate(0, 0) scale(1);
+
+}
+
+#switch4:checked~.wrapper-img {
+    margin-left: -300%;
+}
+
+#switch4:checked~.navigation-and-text>.text>#description-boys,
+#switch4:checked~.navigation-and-text>.text>#description-bill,
+#switch4:checked~.navigation-and-text>.text>#description-cats {
+    visibility: hidden;
+    transform: translate(200%, 0) scale(0.2);
+    transition: 1s;
+}
+
+#switch4:checked~.navigation-and-text>.text>#description-lapenko {
+    visibility: visible;
+    transform: translate(0, 0) scale(1);
+}
+
+
+#controls {
+
+    display: none;
+}
+
+@media (max-width:81.25rem) {
+    .text {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    #description-lapenko,
+    #description-bill,
+    #description-boys,
+    #description-cats {
+        font-size: 1.5rem;
+    }
+
+    .wrapper-img,
+    .wrapper-img img {
+        height: 50vw;
+    }
+
+}
+
+@media (max-width:48rem) {
+    .title {
+        font-size: 2rem;
+    }
+
+
+    .navigation-and-text {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .active label {
+        width: 2rem;
+        height: 2rem;
+
+    }
+}
+
+@media (max-width: 31.25rem) {
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 0.1875rem;
+    }
+
+    #description-lapenko,
+    #description-bill,
+    #description-boys,
+    #description-cats {
+        font-size: 1rem;
+    }
+        .navigation-and-text {
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+}
