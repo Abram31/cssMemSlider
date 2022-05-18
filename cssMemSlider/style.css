@@ -145,6 +145,7 @@ body {
     height: .6rem;
     background: #bbb;
     border: solid 0.125rem #25282a;
+    transition: 0.3s;
 }
 
 .active label {
@@ -158,12 +159,16 @@ body {
     cursor: pointer;
 
 }
+.active label:active .switch-circle {
+   transform: scale(0.6);
+}
 
 .active label:hover .switch-circle {
     background: goldenrod;
     border: solid 0.2rem rgb(218, 165, 32);
     border-color: rgb(92, 87, 87) !important;
 }
+
 
 
 #switch1:checked~.navigation-and-text>.active>label:nth-child(1)>div,
